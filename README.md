@@ -18,4 +18,15 @@
 #####
 9. Separe o dataset em dois conjuntos, um de treino e outro de teste. 
 #####
-10. Efetue uma previsão no conjunto de teste. 
+
+10. Efetue uma previsão no conjunto de teste.
+
+
+
+Comentários:
+
+1 - pd.read_csv('titanic_v2.csv'). Este comando depende sempre do ficheiro estar no mesmo diretório de execução (não é errado, mas convém garantir que efetivamente está).
+
+5 - O modelo está corretamente definido: Survived ~ Age + Pclass + Sex. Em OLS, a interpretação de Sex como variável categórica está ok mas podia explicitar C(Sex).
+
+8 - Parcialmente correto (6/10) - Neste ponto há um ligeiro desvio do que é pedido no enunciado porque utiliza LogisticRegression do scikit-learn e não statsmodels. O enunciado pede “explorar a biblioteca Statsmodels” e um “modelo logístico”, portanto o esperado seria algo como statsmodels (smf.logit / sm.Logit). A preparação de Sex para numérico (map) está correta para sklearn mas não segue o objetivo do enunciado. 
